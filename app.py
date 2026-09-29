@@ -4,7 +4,7 @@ import sys
 import tempfile
 import re
 from pathlib import Path
-from src.model import create_model
+
 # ============================================================
 # CONFIGURATION
 # ============================================================
