@@ -7,8 +7,8 @@ import torch.nn.functional as F
 from PIL import Image
 
 from torchvision import transforms
+from src.model import create_model
 
-from Streamlit_ai.src.model import create_model
 
 
 # ============================================================
