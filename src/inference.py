@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from PIL import Image
 
 from torchvision import transforms
-from src.model import create_model
+from model import create_model
 
 
 
