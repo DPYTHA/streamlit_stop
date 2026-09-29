@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-INFERENCE_FILE = BASE_DIR / "Streamlit_ai" /"src" / "inference.py"
+INFERENCE_FILE = BASE_DIR / "src" / "inference.py"
 
 # ============================================================
 # STYLE BLEU-NUIT
