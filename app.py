@@ -27,6 +27,10 @@ INFERENCE_FILE = BASE_DIR / "src" / "inference.py"
 st.markdown("""
 <style>
 
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
 .stApp {
     background: #07111f;
     color: #f8fafc;
@@ -36,11 +40,22 @@ st.markdown("""
     background: #07111f;
 }
 
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .main-title {
     font-size: 48px;
     font-weight: 800;
     color: #f8fafc;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
+    line-height: 1.15;
 }
 
 .main-title span {
@@ -50,41 +65,74 @@ st.markdown("""
 .subtitle {
     color: #94a3b8;
     font-size: 18px;
-    margin-bottom: 35px;
+    margin: 0 0 30px 0;
 }
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
 
 .section-title {
     font-size: 30px;
     font-weight: 800;
     color: #f8fafc;
-    margin-top: 45px;
-    margin-bottom: 15px;
+    margin: 42px 0 18px 0;
+    line-height: 1.2;
 }
 
 .section-number {
     color: #3b82f6;
 }
 
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
 .card {
     background: #0d1b2e;
     border: 1px solid #1e3a5f;
     border-radius: 18px;
-    padding: 25px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding: 24px;
+    margin: 0 0 16px 0;
 }
 
 .card-title {
+    color: #f8fafc;
     font-size: 20px;
     font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 12px;
+    margin: 0 0 14px 0;
+    line-height: 1.3;
 }
 
 .card-text {
     color: #cbd5e1;
     font-size: 16px;
     line-height: 1.7;
+    margin: 0;
+}
+
+.card-text p {
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.card-text p:last-child {
+    margin-bottom: 0;
+}
+
+.card-text strong {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+   ========================================================= */
+
+.tech-container {
+    margin-top: 10px;
 }
 
 .tech {
@@ -92,27 +140,32 @@ st.markdown("""
     background: #102542;
     border: 1px solid #1e3a5f;
     border-radius: 10px;
-    padding: 10px 16px;
-    margin: 5px;
+    padding: 9px 14px;
+    margin: 0 6px 8px 0;
     color: #dbeafe;
     font-weight: 600;
+    font-size: 14px;
 }
+
+
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
 
 .architecture {
     background: #081525;
     border: 1px solid #1e3a5f;
     border-radius: 18px;
-    padding: 30px;
+    padding: 25px;
+    margin: 0 0 20px 0;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .arch-step {
     background: #0d1b2e;
     border: 1px solid #2563eb;
     border-radius: 12px;
-    padding: 14px;
+    padding: 13px 18px;
     margin: 8px auto;
     max-width: 450px;
     color: #f8fafc;
@@ -121,77 +174,116 @@ st.markdown("""
 
 .arrow {
     color: #60a5fa;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    margin: 0;
 }
+
+
+/* =========================================================
+   MODEL
+   ========================================================= */
 
 .model-box {
     background: #0d1b2e;
     border: 1px solid #2563eb;
     border-radius: 18px;
-    padding: 25px;
-    margin-top: 15px;
+    padding: 24px;
+    margin: 0 0 16px 0;
 }
 
 .model-label {
     color: #94a3b8;
     font-size: 13px;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin: 0 0 5px 0;
 }
 
 .model-value {
     color: #f8fafc;
     font-size: 21px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin: 0 0 17px 0;
 }
+
+.model-value:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TEST
+   ========================================================= */
 
 .test-box {
     background: #0b1728;
     border: 1px solid #2563eb;
     border-radius: 20px;
-    padding: 30px;
-    margin-top: 20px;
+    padding: 25px;
+    margin: 0 0 20px 0;
 }
+
+.test-description {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
 
 .result {
     text-align: center;
     background: #0d1b2e;
     border: 1px solid #2563eb;
     border-radius: 20px;
-    padding: 35px;
+    padding: 30px;
+    margin-top: 10px;
 }
 
 .prediction {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 800;
     color: #60a5fa;
+    margin: 8px 0;
 }
 
 .confidence {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: #f8fafc;
+    margin: 0;
 }
 
 .metric-title {
     color: #94a3b8;
-    font-size: 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
 }
 
 .metric-value {
     color: #f8fafc;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
+    margin: 0;
 }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer {
     text-align: center;
     color: #64748b;
-    margin-top: 60px;
-    padding: 25px;
+    margin-top: 55px;
+    padding: 25px 0 10px 0;
     border-top: 1px solid #1e3a5f;
+    line-height: 1.6;
 }
 
 </style>
@@ -204,9 +296,11 @@ st.markdown("""
 
 st.markdown("""
 <div class="main-title">
-    🚦 STOP Sign <span>Detection</span>
+    STOP Sign <span>Detection</span>
 </div>
+""", unsafe_allow_html=True)
 
+st.markdown("""
 <div class="subtitle">
     Computer Vision · Deep Learning · Image Classification
 </div>
@@ -226,61 +320,51 @@ st.markdown("""
 col1, col2 = st.columns([1.2, 1])
 
 with col1:
+
     st.markdown("""
     <div class="card">
-
-        <div class="card-title">
-            🎯 Objectif
-        </div>
+        <div class="card-title">🎯 Objectif</div>
 
         <div class="card-text">
+            <p>
+                Ce projet consiste à développer un système de
+                <strong>Computer Vision</strong> capable d'analyser
+                une image et de déterminer automatiquement si elle
+                contient un <strong>panneau STOP</strong> ou non.
+            </p>
 
-        Ce projet consiste à développer un système de
-        <strong>Computer Vision</strong> capable d'analyser une image
-        et de déterminer automatiquement si elle contient un
-        <strong>panneau STOP</strong> ou non.
-
-        <br><br>
-
-        Le problème est traité comme une tâche de
-        <strong>classification d'images binaire</strong> avec deux classes :
-
-        <br><br>
-
-        <strong>STOP</strong> → présence d'un panneau STOP
-
-        <br>
-
-        <strong>NOT STOP</strong> → absence d'un panneau STOP
-
+            <p>
+                Le problème est traité comme une tâche de
+                <strong>classification d'images binaire</strong>
+                avec deux classes :
+                <strong>STOP</strong> et <strong>NOT STOP</strong>.
+            </p>
         </div>
-
     </div>
     """, unsafe_allow_html=True)
 
+
 with col2:
+
     st.markdown("""
     <div class="card">
-
-        <div class="card-title">
-            🔎 Problématique
-        </div>
+        <div class="card-title">🔎 Problématique</div>
 
         <div class="card-text">
+            <p>
+                Comment utiliser les techniques de
+                <strong>Deep Learning et de Computer Vision</strong>
+                pour permettre à un système informatique de
+                reconnaître automatiquement un panneau STOP
+                à partir d'une image ?
+            </p>
 
-        Comment utiliser les techniques de
-        <strong>Deep Learning et de Computer Vision</strong>
-        pour permettre à un système informatique de reconnaître
-        automatiquement un panneau STOP à partir d'une image ?
-
-        <br><br>
-
-        Le projet met en œuvre un modèle de classification
-        capable de produire une prédiction accompagnée de son
-        <strong>niveau de confiance</strong>.
-
+            <p>
+                Le projet met en œuvre un modèle de classification
+                capable de produire une prédiction accompagnée
+                de son <strong>niveau de confiance</strong>.
+            </p>
         </div>
-
     </div>
     """, unsafe_allow_html=True)
 
@@ -298,48 +382,50 @@ st.markdown("""
 st.markdown("""
 <div class="card">
 
-<div class="card-title">
-    🛠️ Pipeline de développement
-</div>
+    <div class="card-title">
+        🛠️ Pipeline de développement
+    </div>
 
-<div class="card-text">
+    <div class="card-text">
 
-<strong>1. Préparation des données</strong><br>
-Organisation des images dans les différentes catégories
-nécessaires à l'entraînement, à la validation et au test.
+        <p>
+            <strong>1. Préparation des données</strong><br>
+            Organisation des images dans les différentes catégories
+            nécessaires à l'entraînement, à la validation et au test.
+        </p>
 
-<br><br>
+        <p>
+            <strong>2. Prétraitement des images</strong><br>
+            Préparation des images avant leur passage dans le réseau
+            de neurones afin de respecter le format attendu par le modèle.
+        </p>
 
-<strong>2. Prétraitement des images</strong><br>
-Les images sont préparées avant leur passage dans le réseau
-de neurones afin de respecter le format attendu par le modèle.
+        <p>
+            <strong>3. Transfer Learning</strong><br>
+            Utilisation d'une architecture ResNet-18 pré-entraînée
+            afin de bénéficier de représentations visuelles déjà apprises.
+        </p>
 
-<br><br>
+        <p>
+            <strong>4. Adaptation du modèle</strong><br>
+            La couche finale du réseau est adaptée au problème
+            de classification à deux classes.
+        </p>
 
-<strong>3. Transfer Learning</strong><br>
-Utilisation d'une architecture ResNet-18 pré-entraînée afin
-de bénéficier de représentations visuelles déjà apprises.
+        <p>
+            <strong>5. Inférence</strong><br>
+            Une image peut être envoyée au modèle afin d'obtenir
+            une classe prédite, une confiance et le temps nécessaire
+            à l'inférence.
+        </p>
 
-<br><br>
+        <p>
+            <strong>6. Déploiement</strong><br>
+            Une interface Streamlit permet de présenter le modèle
+            et de tester directement le système avec de nouvelles images.
+        </p>
 
-<strong>4. Adaptation du modèle</strong><br>
-La couche finale du réseau est adaptée au problème de
-classification à deux classes.
-
-<br><br>
-
-<strong>5. Inférence</strong><br>
-Une image peut ensuite être envoyée au modèle afin d'obtenir
-une classe prédite, une confiance et le temps nécessaire
-à l'inférence.
-
-<br><br>
-
-<strong>6. Déploiement</strong><br>
-Une interface Streamlit permet de présenter le modèle et
-de tester directement le système avec de nouvelles images.
-
-</div>
+    </div>
 
 </div>
 """, unsafe_allow_html=True)
@@ -389,7 +475,7 @@ st.markdown("""
     <div class="arrow">↓</div>
 
     <div class="arch-step">
-        🎯 2 classes
+        🎯 Deux classes
     </div>
 
     <div class="arrow">↓</div>
@@ -437,12 +523,15 @@ for tech in technologies:
 st.markdown(
     f"""
     <div class="card">
+
         <div class="card-title">
             💻 Stack technique
         </div>
-        <div style="margin-top:15px;">
+
+        <div class="tech-container">
             {tech_html}
         </div>
+
     </div>
     """,
     unsafe_allow_html=True
@@ -493,6 +582,7 @@ with model_col1:
     </div>
     """, unsafe_allow_html=True)
 
+
 with model_col2:
 
     st.markdown("""
@@ -534,24 +624,24 @@ st.markdown("""
 <div class="section-title">
     🚦 Test en temps réel
 </div>
-
-<div class="subtitle">
-    Importez une image afin de tester directement le modèle de Computer Vision.
-</div>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="test-box">
+
     <div class="card-title">
         🧪 Évaluation du modèle
     </div>
-    <div class="card-text">
-        Le système va analyser l'image fournie et retourner
-        la classe prédite, le niveau de confiance et le temps
-        d'inférence.
+
+    <div class="test-description">
+        Importez une image afin de tester directement le modèle
+        de Computer Vision. Le système retourne la classe prédite,
+        le niveau de confiance et le temps d'inférence.
     </div>
+
 </div>
 """, unsafe_allow_html=True)
+
 
 uploaded_file = st.file_uploader(
     "Choisissez une image à analyser",
@@ -639,9 +729,7 @@ if uploaded_file:
 
             if returncode != 0:
 
-                st.error(
-                    "Erreur pendant l'inférence."
-                )
+                st.error("Erreur pendant l'inférence.")
 
                 st.code(stderr)
 
@@ -655,8 +743,6 @@ if uploaded_file:
                 confidence = None
                 inference_time = None
 
-                # Prediction
-
                 prediction_match = re.search(
                     r"(?:Classe prédite|Predicted class|Prediction|Classe)\s*[:=]\s*([A-Za-z_]+)",
                     stdout,
@@ -666,8 +752,6 @@ if uploaded_file:
                 if prediction_match:
                     prediction = prediction_match.group(1)
 
-                # Confidence
-
                 confidence_match = re.search(
                     r"(?:Confiance|Confidence)\s*[:=]\s*([0-9.,]+)\s*%",
                     stdout,
@@ -676,8 +760,6 @@ if uploaded_file:
 
                 if confidence_match:
                     confidence = confidence_match.group(1)
-
-                # Inference time
 
                 time_match = re.search(
                     r"(?:Temps d'inférence|Inference time|Temps)\s*[:=]\s*([0-9.,]+)\s*ms",
@@ -689,10 +771,19 @@ if uploaded_file:
                     inference_time = time_match.group(1)
 
                 # ------------------------------------------------
-                # RESULTAT PRINCIPAL
+                # RESULTAT
                 # ------------------------------------------------
 
                 if prediction:
+
+                    confidence_html = ""
+
+                    if confidence:
+                        confidence_html = f"""
+                        <div class="confidence">
+                            {confidence}%
+                        </div>
+                        """
 
                     st.markdown(
                         f"""
@@ -706,11 +797,7 @@ if uploaded_file:
                                 {prediction.upper()}
                             </div>
 
-                            {
-                                f'<div class="confidence">{confidence}%</div>'
-                                if confidence
-                                else ''
-                            }
+                            {confidence_html}
 
                         </div>
                         """,
@@ -725,6 +812,12 @@ if uploaded_file:
 
                 with metric1:
 
+                    confidence_value = (
+                        confidence + "%"
+                        if confidence
+                        else "Voir sortie"
+                    )
+
                     st.markdown(
                         f"""
                         <div class="card">
@@ -734,11 +827,7 @@ if uploaded_file:
                             </div>
 
                             <div class="metric-value">
-                                {
-                                    confidence + '%'
-                                    if confidence
-                                    else 'Voir sortie'
-                                }
+                                {confidence_value}
                             </div>
 
                         </div>
@@ -747,6 +836,12 @@ if uploaded_file:
                     )
 
                 with metric2:
+
+                    time_value = (
+                        inference_time + " ms"
+                        if inference_time
+                        else "Voir sortie"
+                    )
 
                     st.markdown(
                         f"""
@@ -757,11 +852,7 @@ if uploaded_file:
                             </div>
 
                             <div class="metric-value">
-                                {
-                                    inference_time + ' ms'
-                                    if inference_time
-                                    else 'Voir sortie'
-                                }
+                                {time_value}
                             </div>
 
                         </div>
@@ -793,10 +884,7 @@ if uploaded_file:
 
 st.markdown("""
 <div class="footer">
-
     <strong>STOP Sign Detection</strong><br>
-
     Computer Vision · Deep Learning · AI / Machine Learning Portfolio
-
 </div>
 """, unsafe_allow_html=True)
